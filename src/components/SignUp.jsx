@@ -16,6 +16,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      axios.defaults.withCredentials = true;
         const res = await axios.post(`https://chat-application-backend-bxvv.onrender.com/api/v1/user/register`,user, {
             headers:{
                 'Content-Type':'application/json'

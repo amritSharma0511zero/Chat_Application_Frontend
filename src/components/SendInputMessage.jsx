@@ -16,6 +16,7 @@ const SendInputMessage = () => {
     e.preventDefault();
 
     try {
+      axios.defaults.withCredentials = true;
       const res = await axios.post(`https://chat-application-backend-bxvv.onrender.com/api/v1/message/send/${selectedUser?._id}`, {message},
         {
           headers:{

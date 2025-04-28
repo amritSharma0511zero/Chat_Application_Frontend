@@ -14,6 +14,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
+      axios.defaults.withCredentials = true;
       const res = await axios.get("https://chat-application-backend-bxvv.onrender.com/api/v1/user/logout");
       toast.success(res.data.message);
       navigate("/login");
